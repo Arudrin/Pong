@@ -50,12 +50,9 @@ public class Pong extends JPanel {
 
 	}
         
-        public void paintScore(Graphics g) {
-            
-        }
         
 	public Pong() {
-		addKeyListener(new KeyListener() {
+		addKeyListener(new KeyListener() { //keylistener for racquet 1
 			@Override
 			public void keyTyped(KeyEvent e) {
 			}
@@ -73,7 +70,7 @@ public class Pong extends JPanel {
 			}
 		});
                 
-                addKeyListener(new KeyListener() {
+                addKeyListener(new KeyListener() { // for racquet 2
 			@Override
 			public void keyTyped(KeyEvent e) {
 			}
@@ -85,7 +82,8 @@ public class Pong extends JPanel {
 			}
 
 			@Override
-			public void keyPressed(KeyEvent e) {
+			public void keyPressed(KeyEvent e) { // added the if statements here since if I put it in the Racquet class
+							     // two racquets move instead.
 			
                             if (e.getKeyCode() == KeyEvent.VK_A  )
                                 racquet2.xa = -speed;
@@ -97,7 +95,7 @@ public class Pong extends JPanel {
 		setFocusable(true);
 	}
 	
-	private void move() {
+	private void move() { // moves all sprites
 		ball.move();
 		racquet1.move();
                 racquet2.move();
@@ -120,7 +118,7 @@ public class Pong extends JPanel {
                 Pong pong = new Pong();
                 frame.add(pong);
                 
-                frame.setResizable(false);
+                frame.setResizable(false); // no maximizing
 		frame.setSize(450, 500); 
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Makes the program stop running after its closed.
