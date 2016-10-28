@@ -27,9 +27,9 @@ public class Racquet1 {
 	int xa = 0;
       
 	private Pong pong;
-        private int score;
+        private int score; // I added the score in the racquet since it represents the player 
 
-	public Racquet1(Pong pong, int y) {
+	public Racquet1(Pong pong, int y) { // now accepts y so that starting position can be changed.
 		this.pong = pong;
                 this.y = y;
                 score = 0;
@@ -79,7 +79,7 @@ public class Racquet1 {
             this.score = score;
         }
         
-        public void resetPos(){
+        public void resetPos(){ // resets position
             x = 225;
         }
 }
